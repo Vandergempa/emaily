@@ -30,6 +30,8 @@ passport.use(
         clientSecret: keys.googleClientSecret,
         // After the user grants permission send him back to this url:
         callbackURL: '/auth/google/callback',
+        // Basically we tell GoogleStrategy that the heroku proxy can be trusted:
+        proxy: true,
         // This option tells the strategy to use the userinfo endpoint instead, !! SHOULDN'T BE 
         // NECESSARY WITH THE GOOGLEAUTH20@2 !!
         userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"

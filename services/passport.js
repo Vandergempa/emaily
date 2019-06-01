@@ -28,32 +28,28 @@ passport.use(
     new GoogleStrategy({
         clientID: keys.googleClientID,
         clientSecret: keys.googleClientSecret,
-        // After the user grants permission send him back to this url:
+        // After the user grants permission send the user back to this url:
         callbackURL: '/auth/google/callback',
         // Basically we tell GoogleStrategy that the heroku proxy can be trusted:
         proxy: true,
         // This option tells the strategy to use the userinfo endpoint instead, !! SHOULDN'T BE 
         // NECESSARY WITH THE GOOGLEAUTH20@2 !!
         userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
-    }, (accessToken, refreshToken, profile, done) => {
-        // Look through the User collection and find the first record with a googleId of 
-        // a profile.id.
-        User.findOne({ googleId: profile.id })
-            .then((existingUser) => {
-                if (existingUser) {
-                    // we already have a record with the given profile id, we can call done()
-                    done(null, existingUser)
-                } else {
-                    // Creating a MODEL INSTANCE/record here and actually SAVING it to the database:
-                    new User({ googleId: profile.id })
-                        .save()
-                        .then(user => done(null, user));
-                }
-            })
-
-        // console.log('access token', accessToken);
-        // console.log('refresh token', refreshToken);
-        // console.log('profile', profile);
-
-    })
+    },
+        async (accessToken, refreshToken, profile, done) => {
+            // Look through the User collection and find the first record with a googleId of 
+            // a profile.id.
+            const existingUser = await User.findOne({ googleId: profile.id });
+            if (existingUser) {
+                // we already have a record with the given profile id, we can call done()
+                return done(null, existingUser);
+            }
+            // Creating a MODEL INSTANCE/record here and actually SAVING it to the database:
+            const user = await new User({ googleId: profile.id }).save();
+            done(null, user);
+            
+            // console.log('access token', accessToken);
+            // console.log('refresh token', refreshToken);
+            // console.log('profile', profile);
+        })
 );

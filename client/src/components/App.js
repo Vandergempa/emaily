@@ -29,6 +29,10 @@ const AppRouter = () => (
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser()
+    // If the user is logged in, don't let the user end up on the landing page.
+    if (history.location.pathname === '/' && (this.props.auth)) {
+      history.push('/surveys')
+    }
   }
 
   render() {
@@ -40,6 +44,12 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = (state, props) => {
+  return {
+    auth: state.auth
+  }
+}
+
 const mapDispatchToProps = (dispatch, props) => {
   return {
     fetchUser: () => dispatch(fetchUser()),
@@ -47,4 +57,4 @@ const mapDispatchToProps = (dispatch, props) => {
 }
 
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

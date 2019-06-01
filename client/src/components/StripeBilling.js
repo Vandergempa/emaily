@@ -13,7 +13,7 @@ class StripeBilling extends Component {
         amount={amount}
         description={description}
         name={name}
-        stripeKey={process.env.REACT_APP_STRIPE_KEY}
+        stripeKey={process.env.REACT_APP_STRIPE_KEY || process.env.STRIPE_PUBLISHABLE_KEY}
         // Stripe sends back a token representing the charge. token={} is a callback function that
         // gets called with the token we receive from Stripe
         token={token => this.props.handleToken(token, description, amount)}

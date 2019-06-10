@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import M from 'materialize-css';
 
@@ -6,7 +7,6 @@ import Header from './Header'
 import SurveyList from './surveys/SurveyList'
 
 let instance = null
-let hasBeenOpened = localStorage.getItem('hasBeenOpened')
 
 class Dashboard extends React.Component {
 
@@ -16,20 +16,21 @@ class Dashboard extends React.Component {
     const elems = document.querySelector('.tap-target');
     M.TapTarget.init(elems);
     instance = M.TapTarget.getInstance(elems);
-    hasBeenOpened === "false" && instance.open();
-
-    localStorage.setItem('hasBeenOpened', true)
+    if (!this.props.surveys.length) {
+      instance.open();
+      setTimeout(() => instance.close(), 3000)
+    }
   }
 
   render() {
     return (
       <div>
         <Header />
-        <div className="right">
+        <div className="dashboard right">
           <a
             id="menu"
             className="btn-floating btn-large right waves-effect waves-light featuredisc pulse"
-            onClick={() => instance.open()}>
+            onClick={() => { instance.open() }}>
             <i className="material-icons">blur_on
           </i>
           </a>
@@ -53,4 +54,11 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard
+const mapStateToProps = (state) => {
+  return {
+    surveys: state.surveys
+  }
+}
+
+
+export default connect(mapStateToProps)(Dashboard)

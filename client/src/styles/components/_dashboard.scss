@@ -1,3 +1,38 @@
+.emptytext {
+  color: rgb(194, 190, 190);
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25vh;
+  font-family: "Raleway", Arial, sans-serif;
+  text-align: center;
+  letter-spacing: -0.2rem;
+}
+
+.emptytext h3 {
+  letter-spacing: 0rem;
+  font-size: $m-size;
+  // color: #66BB6A;
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $s-size;
+  }
+}
+
+.emptytext h1 {
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $l-size/1.2;
+  }
+}
+
+.emptymailicon {
+  margin-top:20px;
+  font-size: 9rem;
+  @media (max-width: $desktop-breakpoint) {
+    font-size: 5rem;
+  }
+}
+
 .chart {
   margin-top: 0px !important;
 }
@@ -77,7 +112,17 @@
   font-family: "Raleway", Arial, sans-serif;
   margin-left: 50px;
   margin-bottom: 30px;
-  transform: translateY(-50px)
+  transform: translateY(-50px);
+  @media (max-width: $desktop-breakpoint) {
+    transform: translateY(-60px);
+    font-size: 90%;
+  }
+}
+
+.tap-target-content > h4 {
+  @media (max-width: $desktop-breakpoint) {
+    font-size: 160%;
+  }
 }
 
 .tap-target {

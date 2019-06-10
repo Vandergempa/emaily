@@ -61,7 +61,17 @@ const SurveyList = (props) => {
 
   return (
     <div>
-      {renderSurveys()}
+      {
+        props.surveys.length
+          ?
+          renderSurveys()
+          :
+          <div className="emptytext">
+            <i className="emptymailicon material-icons">email</i>
+            <h1>There are no surveys to show yet</h1>
+            <h3>Add one by clicking the button in the bottom right corner</h3>
+          </div>
+      }
     </div>
   )
 }

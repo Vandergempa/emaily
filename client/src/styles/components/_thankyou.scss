@@ -1,0 +1,43 @@
+.flex {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  margin: 100px 100px;
+}
+
+.doneicon {
+  font-size: 9rem;
+}
+
+.mailicon {
+  margin-top:20px;
+  font-size: 10rem;
+}
+
+.thankyoutitle {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: $xl-size*1.2;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $l-size;
+  }
+}
+
+.thankyousubtitle {
+  font-size: 1.3rem;
+  margin: 10px 0;
+  margin-bottom: 50px;
+  text-align: center;
+  @media (max-width: $desktop-breakpoint) {
+    font-size: 1rem;
+  }
+}
+
+// font-family: "Roboto", Arial, sans-serif;
+// font-family: "Lato", Arial, sans-serif;
+// font-family: "Montserrat", Arial, sans-serif;
+// font-family: "Open Sans", Arial, sans-serif;
+// font-family: "Raleway", Arial, sans-serif;

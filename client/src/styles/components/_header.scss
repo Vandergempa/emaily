@@ -1,5 +1,9 @@
 .logo {
   margin-left: $s-size/2;
+  @media (max-width: $desktop-breakpoint) {
+    font-size:25px !important;
+    margin-left: $s-size/3;
+  }
 }
 
 .login {
@@ -8,12 +12,31 @@
 
 .credits {
   margin: 0 10px 0 20px;
-
   @media (max-width: $desktop-breakpoint) {
-    margin: 0 5px 0 10px;
+    margin: 0 0 0 10px;
+  }
+}
+
+.paybuttonli {
+  margin: -2px 0 0px 0;
+  text-transform: capitalize !important;
+  @media (max-width: $desktop-breakpoint) {
+    height:30px !important;
+    width:70px !important;
+    padding: 0 !important;
+    margin-right: -3px;
+    margin-left: -1px;
+    font-size: $s-size/1.5 !important;
   }
 }
 
 .paybutton {
-  margin: -3px 0 0px 0;
+  @extend .paybuttonli;
+  background-color:#BB4F4D !important;
+}
+
+.header-main {
+  @media (max-width: $desktop-breakpoint) {
+    font-size: 60%;
+  }
 }

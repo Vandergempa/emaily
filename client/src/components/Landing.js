@@ -1,16 +1,19 @@
 import React from 'react'
 import M from 'materialize-css';
 
+import Header from './Header'
+
 class Landing extends React.Component {
 
   componentDidMount() {
     var elems = document.querySelectorAll('.slider');
-    var instances = M.Slider.init(elems);
+    M.Slider.init(elems);
   }
 
   render() {
     return (
       <div>
+        <Header />
         <div className="slider fullscreen">
           <ul className="slides font">
             <li>

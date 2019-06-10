@@ -14,10 +14,13 @@ class Header extends Component {
         return <li><a className="valign-wrapper" href="/auth/google">Login With <span><i className="fab fa-google login"></i></span></a></li>;
       default:
         return [
-          <li key="1" className="paybutton">
+          <li
+            key="1"
+            className="paybuttonli"
+          >
             <StripeBilling
               amount={100}
-              description="Pay $1 for 5 survey credits"
+              description="Pay $1 for 10 survey credits"
               name="Emaily"
             />
           </li>,
@@ -31,7 +34,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div className='navbar-fixed font'>
+      <div className='header-main navbar-fixed font'>
         <nav>
           <div className="nav-wrapper green lighten-1">
             <Link

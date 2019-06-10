@@ -29,7 +29,7 @@ module.exports = (app) => {
     }/* , postStripeCharge(res) */);
 
     // Req.user is set up automatically by passport, so we don't have to query the database again.
-    req.user.credits += 5;
+    req.user.credits += 10;
     const user = await req.user.save();
 
     res.send(user);

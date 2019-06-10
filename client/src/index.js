@@ -5,7 +5,6 @@ import configureStore from './store/configureStore';
 import './styles/styles.scss'
 import 'materialize-css/dist/css/materialize.min.css'
 
-
 import App from './components/App'
 
 const store = configureStore();

@@ -1,6 +1,6 @@
 // A library to make ajax requests to a server
 import axios from 'axios'
-import { history } from '../components/App'
+import { history } from '../routers/AppRouter'
 
 export const addUser = (ref) => ({
   type: 'ADD_USER',
@@ -36,5 +36,13 @@ export const handleToken = (token, description, amount) => {
       token
     });
     dispatch(addUser(res.data))
+  }
+};
+
+export const submitSurvey = (values) => {
+  return async (dispatch) => {
+    const res = await axios.post('/api/surveys', values);
+    dispatch(addUser(res.data))
+    history.push('/surveys')
   }
 };

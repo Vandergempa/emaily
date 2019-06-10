@@ -1,0 +1,19 @@
+.nextbutton {
+  transition-duration: .2s;
+  transition-timing-function: ease;
+  background-color: teal;
+}
+
+.nextbutton:hover {
+  background-color: teal lighten($color: rgb(4, 231, 231), $amount: 80)
+}
+
+.cancelbutton {
+  transition-duration: .2s;
+  transition-timing-function: ease;
+  background-color: red;
+}
+
+.cancelbutton:hover {
+  background-color: red lighten($color: rgb(4, 231, 231), $amount: 80)
+}

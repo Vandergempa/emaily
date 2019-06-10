@@ -3,7 +3,7 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 90%;
 }    
 body {
     color: $dark-grey;
@@ -28,13 +28,23 @@ button:disabled {
   font-style: italic;
 }
 
-
 .bold {
-  font-weight: 800
+  font-weight: 600
 }
 
+.light {
+  font-weight: 100
+}
+
+
 .font {
+  font-family: "Raleway", Arial, sans-serif;
+}
+
+.font2 {
   font-family: "Montserrat", Arial, sans-serif;
+  letter-spacing: -1px;
+  font-size: 1.4rem;
 }
 
 .font-size1 {

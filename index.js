@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 // To create the user collection (note that the order of imports are very important!):
 require('./models/User');
+require('./models/Survey');
 // Because we just want to run that file, we import it like this (order!):
 require('./services/passport');
 
@@ -31,6 +32,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   // Making sure that express will serve up production assets, like our main.js or main.css file!

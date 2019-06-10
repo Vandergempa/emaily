@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import StripeCheckout from 'react-stripe-checkout'
 import { connect } from 'react-redux'
-
 import { handleToken } from '../actions/authActions'
 
 class StripeBilling extends Component {
+
   render() {
     const { description, amount, name } = this.props;
     return (
@@ -18,7 +18,8 @@ class StripeBilling extends Component {
         // gets called with the token we receive from Stripe
         token={token => this.props.handleToken(token, description, amount)}
       >
-        <button className="btn btn-primary">
+        <button className="btn btn-primary paybutton"
+        >
           Add credits
         </button>
       </StripeCheckout>

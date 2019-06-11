@@ -11,8 +11,8 @@ export default ({ input, label, placeholder, meta: { active, error, touched } })
         : <input {...input} placeholder={placeholder} />
       }
       <div>
-        {(active && error) && <div id="snackbar" className="show">{(label !=="Recipient List" && label !=="Sender email") ? error : "Please provide (an) email address(es)"}</div>}
-        {(touched && error) && <div className="red-text redtext">{(label !=="Recipient List" && label !=="Sender email") ? "Empty field" : error}</div>}
+        {(active && error) && <div id="snackbar" className="show">{(label !=="Recipient List" && label !=="Sender\'s email") ? error : "Please provide (an) email address(es)"}</div>}
+        {(touched && error) && <div className="red-text redtext">{(label !=="Recipient List" && label !=="Sender\'s email") ? "Empty field" : error}</div>}
       </div>
     </div>
   )

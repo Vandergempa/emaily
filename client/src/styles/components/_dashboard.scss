@@ -102,9 +102,12 @@
   @extend .onelineflex;
 }
 
-.featuredisc {
+.disccolor {
   background-color:#BB4F4D !important;
-  margin: 10px 20px 0 0;
+}
+
+.featuredisc {
+  margin: 10px 0 0 20px;
 }
 
 .tap-target-content > h4, .tap-target-content > p {

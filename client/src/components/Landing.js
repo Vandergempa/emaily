@@ -19,7 +19,7 @@ class Landing extends React.Component {
             <li>
               <img alt="mailboxes" src="images/email2.jpg"></img>
               <div className="caption center-align">
-                <h1 className="bold font-size1">Emaily</h1>
+                <h1 className="bold font-size1 span">Emaily</h1>
                 <h2 className="thin grey-text text-lighten-3">Create and send out personalized email surveys</h2>
               </div>
             </li>

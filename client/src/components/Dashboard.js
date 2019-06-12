@@ -24,12 +24,12 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="">
         <Header />
-        <div className="dashboard right">
+        <div className="featuredisc">
           <a
             id="menu"
-            className="btn-floating btn-large right waves-effect waves-light featuredisc pulse"
+            className="btn-floating btn-large waves-effect waves-light disccolor pulse"
             onClick={() => { instance.open() }}>
             <i className="material-icons">blur_on
           </i>
